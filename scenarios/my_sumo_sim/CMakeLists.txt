@@ -1,0 +1,1 @@
+add_opp_run(my_sumo_sim CONFIG omnetpp.ini)

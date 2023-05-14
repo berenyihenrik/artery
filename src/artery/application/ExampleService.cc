@@ -106,13 +106,23 @@ void ExampleService::trigger()
 	}
 }
 
-void ExampleService::receiveSignal(cComponent* source, simsignal_t signal, cObject*, cObject*)
+void ExampleService::receiveSignal(cComponent* source, simsignal_t signal, cObject* c_obj, cObject*)
 {
 	Enter_Method("receiveSignal");
 
 	if (signal == scSignalCamReceived) {
 		auto& vehicle = getFacilities().get_const<traci::VehicleController>();
 		EV_INFO << "Vehicle " << vehicle.getVehicleId() << " received a CAM in sibling serivce\n";
+		
+		CaObject* ca = dynamic_cast<CaObject*>(c_obj);
+		const CamParameters_t& params = ca->asn1()->cam.camParameters;
+
+		if (params.highFrequencyContainer.present == HighFrequencyContainer_PR_basicVehicleContainerHighFrequency) {
+			const BasicVehicleContainerHighFrequency_t& hf = params.highFrequencyContainer.choice.basicVehicleContainerHighFrequency;
+			EV_ERROR << "CAM: " << "speed: " << hf.speed.speedValue << "\n";
+		}
+
+		
 	}
 }
 
