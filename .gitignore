@@ -17,6 +17,8 @@ www/
 
 # CMake default directories
 build/
+cmake-build-debug/
+CMakeFiles/
 
 .Trash-1000/
 .idea/
