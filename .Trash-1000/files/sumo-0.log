@@ -1,0 +1,23 @@
+***Starting server on port 55883 ***
+Loading net-file from 'my_sumo_sim.net.xml'... done (19ms).
+Loading done.
+Simulation version 1.1.0 started with time: 0.00
+Simulation ended at time: 31.00
+Reason: TraCI requested termination.
+Performance: 
+ Duration: 721463ms
+ Real time factor: 0.0429682
+ UPS: 0.332657
+Vehicles: 
+ Inserted: 14 (Loaded: 95)
+ Running: 14
+ Waiting: 1
+Statistics (avg):
+ RouteLength: 0.00
+ Duration: 0.00
+ WaitingTime: 0.00
+ TimeLoss: 0.00
+ DepartDelay: 0.00
+
+DijkstraRouter answered 15 queries and explored 33.53 edges on average.
+DijkstraRouter spent 0ms answering queries (0.00ms on average).

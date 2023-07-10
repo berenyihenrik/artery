@@ -5,6 +5,8 @@
 #include <inet/common/ModuleAccess.h>
 #include <limits>
 
+#include "veins/modules/mobility/traci/TraCIColor.h"
+
 Define_Module(traci::Core)
 
 using namespace omnetpp;
@@ -40,6 +42,9 @@ void Core::initialize()
     m_stopping = par("selfStopping");
     scheduleAt(par("startTime"), m_connectEvent);
     m_subscriptions = inet::getModuleFromPar<SubscriptionManager>(par("subscriptionsModule"), manager, false);
+
+    step = 0;
+    anomalyVehicle = "";
 }
 
 void Core::finish()
@@ -54,6 +59,33 @@ void Core::handleMessage(cMessage* msg)
 {
     if (msg == m_updateEvent) {
         m_traci->simulationStep();
+        step++;
+
+
+       // def simulate_stop(stopAt, restartAt, step, roadID, anomalyVehicle):
+
+        if (step > 10 and anomalyVehicle == "") {
+            std::vector<std::string> vehicleIds = m_traci->vehicle.getIDList();
+            for (auto &candidate : vehicleIds) {
+                if (m_traci->vehicle.getRoadID(candidate) == "42278771#2") {
+                    m_traci->vehicle.slowDown(candidate, 0, 4);
+                    m_traci->vehicle.setSpeed(candidate, 0);
+                    m_traci->vehicle.setColor(candidate, libsumo::TraCIColor(255, 0, 0));
+                    anomalyVehicle = candidate;
+                    break;
+                }
+            }
+        }
+
+
+        if (step > 100) {
+            m_traci->vehicle.setSpeed(anomalyVehicle, -1);
+        }
+
+
+
+
+
         if (m_subscriptions) {
             m_subscriptions->step();
         }
@@ -71,6 +103,8 @@ void Core::handleMessage(cMessage* msg)
         scheduleAt(simTime() + m_updateInterval, m_updateEvent);
     }
 }
+
+
 
 void Core::checkVersion()
 {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/inet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/inet/showcases" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/inet/tutorials" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/pybind11" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/sim0mqpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/simulte" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/vanetza" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extern/veins" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scenarios/mt-its2017" vcs="Git" />
+  </component>
+</project>

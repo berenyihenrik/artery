@@ -38,6 +38,9 @@ private:
     std::shared_ptr<API> m_traci;
     bool m_stopping;
     SubscriptionManager* m_subscriptions;
+
+    int step;
+    std::string anomalyVehicle;
 };
 
 } // namespace traci

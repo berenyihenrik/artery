@@ -9,6 +9,7 @@ import traci.Manager;
 network World
 {
     parameters:
+        //@display("bgb=2000,2000;bgi=maps/network,s");
         bool withStoryboard = default(false);
         bool withPhysicalEnvironment = default(false);
         int numRoadSideUnits = default(0);

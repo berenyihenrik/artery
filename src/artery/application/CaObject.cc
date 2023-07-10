@@ -91,4 +91,58 @@ protected:
 
 Register_ResultFilter("camGenerationDeltaTime", CamGenerationDeltaTimeResultFilter)
 
+class CamSpeedFilter : public cObjectResultFilter
+{
+protected:
+    void receiveSignal(cResultFilter* prev, simtime_t_cref t, cObject* object, cObject* details) override
+    {
+        if (auto cam = dynamic_cast<CaObject*>(object)) {
+            long speedValue;
+            const CamParameters_t& params = cam->asn1()->cam.camParameters;
+            if (params.highFrequencyContainer.present == HighFrequencyContainer_PR_basicVehicleContainerHighFrequency) {
+                const BasicVehicleContainerHighFrequency_t& highFrequencyContainer = params.highFrequencyContainer.choice.basicVehicleContainerHighFrequency;
+                speedValue = highFrequencyContainer.speed.speedValue;
+            }
+
+            fire(this, t, speedValue, details);
+        }
+    }
+};
+
+Register_ResultFilter("camSpeed", CamSpeedFilter)
+
+class CamLatitudeFilter : public cObjectResultFilter
+{
+protected:
+    void receiveSignal(cResultFilter* prev, simtime_t_cref t, cObject* object, cObject* details) override
+    {
+        if (auto cam = dynamic_cast<CaObject*>(object)) {
+            const CamParameters_t& params = cam->asn1()->cam.camParameters;
+            const BasicContainer_t& basicContainer = params.basicContainer;
+            const auto latitude = basicContainer.referencePosition.latitude;
+
+            fire(this, t, latitude, details);
+        }
+    }
+};
+
+Register_ResultFilter("camLatitude", CamLatitudeFilter)
+
+class CamLongitudeFilter : public cObjectResultFilter
+{
+protected:
+    void receiveSignal(cResultFilter* prev, simtime_t_cref t, cObject* object, cObject* details) override
+    {
+        if (auto cam = dynamic_cast<CaObject*>(object)) {
+            const CamParameters_t& params = cam->asn1()->cam.camParameters;
+            const BasicContainer_t& basicContainer = params.basicContainer;
+            const auto longitude = basicContainer.referencePosition.longitude;
+
+            fire(this, t, longitude, details);
+        }
+    }
+};
+
+Register_ResultFilter("camLongitude", CamLongitudeFilter)
+
 } // namespace artery

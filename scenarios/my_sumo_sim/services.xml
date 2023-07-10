@@ -6,7 +6,7 @@
 			<type pattern="artery.inet.Person" match="inverse" />
 		</filters>
 	</service>
-	<service type="artery.application.ExampleService">
+	<service type="artery.application.CaLoggingService">
 		<listener port="4711" />
 	</service>
 </services>

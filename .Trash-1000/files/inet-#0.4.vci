@@ -1,0 +1,946 @@
+file 9380123 1684140925                                         
+version 2
+run inet-0-20230515-08:52:21-5074
+attr configname inet
+attr datetime 20230515-08:52:21
+attr experiment inet
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network artery.inet.World
+attr processid 5074
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.node[*].wlan[*].typename "\"VanetNic\""
+param *.node[*].wlan[*].radio.channelNumber 180
+param *.node[*].wlan[*].radio.carrierFrequency "5.9 GHz"
+param *.node[*].wlan[*].radio.transmitter.power "200 mW"
+param *.node[*].middleware.updateInterval 0.1s
+param *.node[*].middleware.datetime "\"2013-06-01 12:35:00\""
+param *.node[*].middleware.services "xmldoc(\"services.xml\")"
+param *.traci.core.version -1
+param *.traci.launcher.typename "\"PosixLauncher\""
+param *.traci.launcher.sumocfg "\"my_sumo_sim.sumocfg\""
+param *.traci.launcher.sumo "\"sumo\""
+
+vector 0 World.node[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 World.node[0].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 World.node[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 3 World.node[0].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 4 World.node[0].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 5 World.node[0].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 6 World.node[0].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 7 World.node[0].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 8 World.node[0].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 9 World.node[0].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 10 World.node[0].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 11 World.node[0].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 12 World.node[0].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 13 World.node[0].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 14 World.node[0].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 15 World.node[0].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 16 World.node[1].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 17 World.node[1].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 18 World.node[1].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 19 World.node[1].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 20 World.node[1].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 21 World.node[1].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 22 World.node[1].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 23 World.node[1].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 24 World.node[1].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 25 World.node[1].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 26 World.node[1].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 27 World.node[1].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 28 World.node[1].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 29 World.node[1].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 30 World.node[1].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 31 World.node[1].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 32 World.node[1].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 33 World.node[1].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 34 World.node[1].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 35 World.node[1].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 36 World.node[0].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 37 World.node[0].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 38 World.node[0].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 39 World.node[0].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 40 World.node[2].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 41 World.node[2].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 42 World.node[2].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 43 World.node[2].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 44 World.node[2].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 45 World.node[2].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 46 World.node[2].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 47 World.node[2].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 48 World.node[2].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 49 World.node[2].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 50 World.node[2].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 51 World.node[2].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 52 World.node[2].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 53 World.node[2].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 54 World.node[2].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 55 World.node[2].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 56 World.node[2].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 57 World.node[2].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 58 World.node[2].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 59 World.node[2].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 60 World.node[3].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 61 World.node[3].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 62 World.node[3].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 63 World.node[3].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 64 World.node[3].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 65 World.node[3].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 66 World.node[3].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 67 World.node[3].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 68 World.node[3].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 69 World.node[3].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 70 World.node[3].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 71 World.node[3].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 72 World.node[3].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 73 World.node[3].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 74 World.node[3].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 75 World.node[3].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 76 World.node[3].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 77 World.node[3].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 78 World.node[3].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 79 World.node[3].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 80 World.node[4].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 81 World.node[4].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 82 World.node[4].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 83 World.node[4].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 84 World.node[4].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 85 World.node[4].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 86 World.node[4].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 87 World.node[4].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 88 World.node[4].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 89 World.node[4].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 90 World.node[4].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 91 World.node[4].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 92 World.node[4].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 93 World.node[4].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 94 World.node[4].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 95 World.node[4].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 96 World.node[4].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 97 World.node[4].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 98 World.node[4].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 99 World.node[4].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 100 World.node[5].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 101 World.node[5].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 102 World.node[5].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 103 World.node[5].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 104 World.node[5].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 105 World.node[5].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 106 World.node[5].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 107 World.node[5].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 108 World.node[5].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 109 World.node[5].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 110 World.node[5].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 111 World.node[5].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 112 World.node[5].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 113 World.node[5].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 114 World.node[5].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 115 World.node[5].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 116 World.node[5].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 117 World.node[5].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 118 World.node[5].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 119 World.node[5].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 120 World.node[6].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 121 World.node[6].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 122 World.node[6].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 123 World.node[6].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 124 World.node[6].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 125 World.node[6].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 126 World.node[6].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 127 World.node[6].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 128 World.node[6].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 129 World.node[6].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 130 World.node[6].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 131 World.node[6].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 132 World.node[6].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 133 World.node[6].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 134 World.node[6].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 135 World.node[6].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 136 World.node[6].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 137 World.node[6].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 138 World.node[6].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 139 World.node[6].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 140 World.node[7].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 141 World.node[7].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 142 World.node[7].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 143 World.node[7].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 144 World.node[7].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 145 World.node[7].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 146 World.node[7].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 147 World.node[7].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 148 World.node[7].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 149 World.node[7].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 150 World.node[7].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 151 World.node[7].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 152 World.node[7].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 153 World.node[7].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 154 World.node[7].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 155 World.node[7].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 156 World.node[7].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 157 World.node[7].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 158 World.node[7].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 159 World.node[7].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 160 World.node[8].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 161 World.node[8].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 162 World.node[8].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 163 World.node[8].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 164 World.node[8].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 165 World.node[8].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 166 World.node[8].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 167 World.node[8].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 168 World.node[8].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 169 World.node[8].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 170 World.node[8].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 171 World.node[8].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 172 World.node[8].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 173 World.node[8].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 174 World.node[8].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 175 World.node[8].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 176 World.node[8].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 177 World.node[8].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 178 World.node[8].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 179 World.node[8].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 180 World.node[9].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 181 World.node[9].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 182 World.node[9].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 183 World.node[9].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 184 World.node[9].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 185 World.node[9].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 186 World.node[9].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 187 World.node[9].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 188 World.node[9].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 189 World.node[9].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 190 World.node[9].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 191 World.node[9].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+vector 192 World.node[9].middleware.CaService transmission:vector(camStationId) ETV
+attr source CamSent
+vector 193 World.node[9].middleware.CaService transmission:vector(camGenerationDeltaTime) ETV
+attr source CamSent
+vector 194 World.node[9].middleware.CaService transmission:vector(camSpeed) ETV
+attr source CamSent
+vector 195 World.node[9].middleware.CaService transmission:vector(camLatitude) ETV
+attr source CamSent
+vector 196 World.node[9].middleware.CaService transmission:vector(camLongitude) ETV
+attr source CamSent
+vector 197 World.node[9].wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 198 World.node[9].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 199 World.node[9].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 200 World.node[10].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 201 World.node[10].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 202 World.node[10].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 203 World.node[10].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 204 World.node[10].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 205 World.node[10].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 206 World.node[10].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 207 World.node[10].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 208 World.node[10].wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 209 World.node[10].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 210 World.node[10].middleware.CaService reception:vector(camStationId) ETV
+attr source CamReceived
+vector 211 World.node[10].middleware.CaService reception:vector(camGenerationDeltaTime) ETV
+attr source CamReceived
+0	33794 13176 2 93514 1 24.019764 616 0 3 1537 3995
+1	46970 10 2 2 1 1 1 180 180 180 32400
+2	46980 90637 2 93892 1 24.069852270643 3645 0 3 6368 15458
+3	137617 181274 2 93892 1 24.069852270643 7290 0 0 0 0
+4	318891 202034 2 93892 1 24.069852270643 8206 0 2 916 1832
+5	520925 187192 2 93892 1 24.069852270643 7602 0 2 312 624
+6	708117 181274 2 93892 1 24.069852270643 7290 0 0 0 0
+7	889391 181274 2 93892 1 24.069852270643 7290 0 0 0 0
+8	1070665 2051 5 93712 1.159284461639 24.059284461639 79 16 16 1264 20224
+9	1072716 2280 5 93712 1.159284461639 24.059284461639 79 8456 31456 1535024 33500514944
+10	1074996 2359 5 93712 1.159284461639 24.059284461639 79 8456 31456 1535024 33500514944
+11	1077355 2359 5 93712 1.159284461639 24.059284461639 79 8456 31456 1535024 33500514944
+12	1079714 2359 5 93712 1.159284461639 24.059284461639 79 8456 31456 1535024 33500514944
+13	1082073 7590 8 93497 1.159284461639 24.019284 307 123 323 44390 7555566
+14	1089663 7592 11 93500 1.159284461639 24.019284 307 123 323 44390 7555566
+15	1097255 27548 12 93514 1.159284461639 24.019764 1228 0 2 1228 1842
+16	1124803 12942 343 93588 3 24.034219616163 566 0 3 1412 3670
+17	1137745 13 343 343 3 3 1 180 180 180 32400
+18	1137758 93319 343 93907 3 24.069852568642 3593 0 3 6339 15423
+19	1231077 186638 343 93907 3 24.069852568642 7186 0 0 0 0
+20	1417715 205482 343 93907 3 24.069852568642 8022 0 2 836 1672
+21	1623197 193634 343 93907 3 24.069852568642 7478 0 2 292 584
+22	1816831 186638 343 93907 3 24.069852568642 7186 0 0 0 0
+23	2003469 186638 343 93907 3 24.069852568642 7186 0 0 0 0
+24	2190107 43222 359 93908 3.019765805678 24.069852568642 1514 123 323 218945 37276287
+25	2233329 43222 359 93908 3.019765805678 24.069852568642 1514 123 323 218945 37276287
+26	2276551 11066 362 93911 3.019765805678 24.069852568642 391 16 655 109703 43904753
+27	2287617 11918 362 93911 3.019765805678 24.069852568642 391 9456 31456 9135296 224375086976
+28	2299535 1990 385 93568 3.133739616163 24.033739616163 73 87 87 6351 552537
+29	2301525 2209 385 93568 3.133739616163 24.033739616163 73 10456 31456 1498288 33634259328
+30	2303734 2209 385 93568 3.133739616163 24.033739616163 73 10456 31456 1498288 33634259328
+31	2305943 2209 385 93568 3.133739616163 24.033739616163 73 10456 31456 1498288 33634259328
+32	2308152 2209 385 93568 3.133739616163 24.033739616163 73 10456 31456 1498288 33634259328
+33	2310361 7024 388 93571 3.133739616163 24.033739616163 282 123 323 40695 6904801
+34	2317385 7024 391 93574 3.133739616163 24.033739616163 282 123 323 40695 6904801
+35	2324409 25840 392 93588 3.133739616163 24.034219616163 1128 0 2 1128 1692
+36	2350249 43280 398 93893 3.134221421841 24.069852270643 1515 123 323 219067 37291169
+37	2393529 43280 398 93893 3.134221421841 24.069852270643 1515 123 323 219067 37291169
+38	2436809 11154 401 93896 3.134221421841 24.069852270643 393 87 655 114918 44439114
+39	2447963 12013 401 93896 3.134221421841 24.069852270643 393 10456 31456 9192208 226052574848
+40	2459976 12510 1373 93371 5 24.010136035154 510 0 3 1272 3306
+41	2472486 14 1373 1373 5 5 1 180 180 180 32400
+42	2472500 91730 1373 93917 5 24.069853028049 3485 0 3 6207 15135
+43	2564230 183460 1373 93917 5 24.069853028049 6970 0 0 0 0
+44	2747690 201316 1373 93917 5 24.069853028049 7726 0 2 782 1538
+45	2949006 189848 1373 93917 5 24.069853028049 7230 0 2 260 520
+46	3138854 183460 1373 93917 5 24.069853028049 6970 0 0 0 0
+47	3322314 183460 1373 93917 5 24.069853028049 6970 0 0 0 0
+48	3505774 42592 1393 93918 5.053947960304 24.069853028049 1488 123 323 214928 36521440
+49	3548366 42592 1393 93918 5.053947960304 24.069853028049 1488 123 323 214928 36521440
+50	3590958 10859 1396 93921 5.053947960304 24.069853028049 384 16 655 104976 42772286
+51	3601817 11756 1396 93921 5.053947960304 24.069853028049 384 12456 31456 9085104 224639767424
+52	3613573 1846 1430 93351 5.109928035154 24.009928035154 65 158 158 10270 1622660
+53	3615419 1976 1430 93351 5.109928035154 24.009928035154 65 12456 31456 1386640 31618099840
+54	3617395 1976 1430 93351 5.109928035154 24.009928035154 65 12456 31456 1386640 31618099840
+55	3619371 1976 1430 93351 5.109928035154 24.009928035154 65 12456 31456 1386640 31618099840
+56	3621347 1976 1430 93351 5.109928035154 24.009928035154 65 12456 31456 1386640 31618099840
+57	3623323 6387 1433 93354 5.109928035154 24.009928035154 254 123 323 36631 6208649
+58	3629710 6751 1436 93357 5.109928035154 24.009928035154 254 123 323 36631 6208649
+59	3636461 24972 1437 93371 5.109928035154 24.010136035154 1016 0 2 1016 1524
+60	3661433 10461 3407 93442 7 24.01714 456 0 3 1137 2955
+61	3671894 14 3407 3407 7 7 1 180 180 180 32400
+62	3671908 87007 3407 93887 7 24.069852263914 3323 0 3 5964 14568
+63	3758915 174014 3407 93887 7 24.069852263914 6646 0 0 0 0
+64	3932929 190146 3407 93887 7 24.069852263914 7322 0 2 676 1352
+65	4123075 178554 3407 93887 7 24.069852263914 6878 0 2 232 464
+66	4301629 174014 3407 93887 7 24.069852263914 6646 0 0 0 0
+67	4475643 174014 3407 93887 7 24.069852263914 6646 0 0 0 0
+68	4649657 41147 3433 93888 7.030137289999 24.069852263914 1434 123 323 207047 35159641
+69	4690804 41147 3433 93888 7.030137289999 24.069852263914 1434 123 323 207047 35159641
+70	4731951 10480 3436 93891 7.030137289999 24.069852263914 369 16 655 100050 41106194
+71	4742431 11333 3436 93891 7.030137289999 24.069852263914 369 14456 31456 8895264 222344752384
+72	4753764 1686 3657 93640 7.156660144846 24.056660144846 59 229 229 13511 3094019
+73	4755450 1804 3657 93640 7.156660144846 24.056660144846 59 14456 31456 1323904 31230132224
+74	4757254 1804 3657 93640 7.156660144846 24.056660144846 59 14456 31456 1323904 31230132224
+75	4759058 1804 3657 93640 7.156660144846 24.056660144846 59 14456 31456 1323904 31230132224
+76	4760862 1804 3657 93640 7.156660144846 24.056660144846 59 14456 31456 1323904 31230132224
+77	4762666 5622 3660 93425 7.156660144846 24.01666 227 123 323 32890 5616826
+78	4768288 5622 3663 93428 7.156660144846 24.01666 227 123 323 32890 5616826
+79	4773910 20874 3664 93442 7.156660144846 24.01714 908 0 2 908 1362
+80	4794784 10178 6671 93155 9 23.997112176599 404 0 3 1007 2617
+81	4804962 14 6671 6671 9 9 1 180 180 180 32400
+82	4804976 82846 6671 93912 9 24.069852791828 3113 0 3 5622 13752
+83	4887822 165692 6671 93912 9 24.069852791828 6226 0 0 0 0
+84	5053514 179996 6671 93912 9 24.069852791828 6822 0 2 606 1202
+85	5233510 170968 6671 93912 9 24.069852791828 6434 0 2 218 426
+86	5404478 165692 6671 93912 9 24.069852791828 6226 0 0 0 0
+87	5570170 165692 6671 93912 9 24.069852791828 6226 0 0 0 0
+88	5735862 39050 6693 93913 9.01013609736 24.069852791828 1355 123 323 196071 33414677
+89	5774912 39050 6693 93913 9.01013609736 24.069852791828 1355 123 323 196071 33414677
+90	5813962 9949 6696 93916 9.01013609736 24.069852791828 349 16 655 94405 38889069
+91	5823911 10749 6696 93916 9.01013609736 24.069852791828 349 15456 31456 8584144 217343169664
+92	5834660 1499 7155 88105 9.196896176599 23.396896176599 52 300 300 15600 4680000
+93	5836159 1603 7155 88105 9.196896176599 23.396896176599 52 16456 30456 1215712 29449916672
+94	5837762 1603 7155 88105 9.196896176599 23.396896176599 52 16456 30456 1215712 29449916672
+95	5839365 1603 7155 88105 9.196896176599 23.396896176599 52 16456 30456 1215712 29449916672
+96	5840968 1603 7155 88105 9.196896176599 23.396896176599 52 16456 30456 1215712 29449916672
+97	5842571 5115 7158 93139 9.196896176599 23.996896176599 201 123 323 28872 4861732
+98	5847686 5479 7161 93142 9.197044255697 23.996896176599 201 123 323 28872 4861732
+99	5853165 20308 7162 93155 9.197044255697 23.997112176599 804 0 2 804 1206
+100	5873473 8636 11636 93088 11 23.974599454234 348 0 3 867 2253
+101	5882109 17 11636 11636 11 11 1 180 180 180 32400
+102	5882126 78233 11636 93877 11 24.069851789942 2845 0 3 5170 12664
+103	5960359 156466 11636 93877 11 24.069851789942 5690 0 0 0 0
+104	6116825 169666 11636 93877 11 24.069851789942 6206 0 2 516 1032
+105	6286491 160408 11636 93877 11 24.069851789942 5866 0 2 176 352
+106	6446899 156466 11636 93877 11 24.069851789942 5690 0 0 0 0
+107	6603365 156466 11636 93877 11 24.069851789942 5690 0 0 0 0
+108	6759831 37304 11682 93878 11.010409713017 24.069851789942 1249 123 323 180155 30542937
+109	6797135 37304 11682 93878 11.010409713017 24.069851789942 1249 123 323 180155 30542937
+110	6834439 9507 11685 93881 11.010409713017 24.069851789942 321 16 655 87780 36178860
+111	6843946 10238 11685 93881 11.010409713017 24.069851789942 321 18456 31456 8129376 210216243456
+112	6854184 1320 12160 91393 11.174383454234 23.774383454234 44 371 371 16324 6056204
+113	6855504 1408 12160 91393 11.174383454234 23.774383454234 44 18456 30456 1064064 26349277184
+114	6856912 1408 12160 91393 11.174383454234 23.774383454234 44 18456 30456 1064064 26349277184
+115	6858320 1408 12160 91393 11.174383454234 23.774383454234 44 18456 30456 1064064 26349277184
+116	6859728 1408 12160 91393 11.174383454234 23.774383454234 44 18456 30456 1064064 26349277184
+117	6861136 4614 12163 93072 11.174383454234 23.974383454234 173 123 323 25008 4254780
+118	6865750 4649 12166 93075 11.174383454234 23.974383454234 173 123 323 25008 4254780
+119	6870399 17212 12167 93088 11.174383454234 23.974599454234 692 0 2 692 1038
+120	6887611 6630 22016 93876 14 24.069851736604 270 0 3 672 1746
+121	6894241 17 22016 22016 14 14 1 180 180 180 32400
+122	6894258 65025 22016 93876 14 24.069851736604 2363 0 3 4323 10605
+123	6959283 130050 22016 93876 14 24.069851736604 4726 0 0 0 0
+124	7089333 139648 22016 93876 14 24.069851736604 5122 0 2 396 792
+125	7228981 133680 22016 93876 14 24.069851736604 4866 0 2 140 280
+126	7362661 130050 22016 93876 14 24.069851736604 4726 0 0 0 0
+127	7492711 130050 22016 93876 14 24.069851736604 4726 0 0 0 0
+128	7622761 31299 22070 93822 14.010409578303 24.069429736604 1047 123 323 151160 25666076
+129	7654060 31299 22070 93822 14.010409578303 24.069429736604 1047 123 323 151160 25666076
+130	7685359 7937 22073 93825 14.010409578303 24.069429736604 268 16 655 76282 31993332
+131	7693296 8542 22073 93825 14.010409578303 24.069429736604 268 21456 31456 7084208 189423070848
+132	7701838 1050 22664 93856 14.169562544627 24.069562544627 35 442 442 15470 6837740
+133	7702888 1120 22664 93856 14.169562544627 24.069562544627 35 21456 31456 904960 23709045760
+134	7704008 1120 22664 93856 14.169562544627 24.069562544627 35 21456 31456 904960 23709045760
+135	7705128 1120 22664 93856 14.169562544627 24.069562544627 35 21456 31456 904960 23709045760
+136	7706248 1120 22664 93856 14.169562544627 24.069562544627 35 21456 31456 904960 23709045760
+137	7707368 3576 22667 93859 14.169562544627 24.069562544627 134 123 323 19381 3300539
+138	7710944 3574 22670 93862 14.169562544627 24.069643736604 134 123 323 19381 3300539
+139	7714518 13200 22671 93876 14.169562544627 24.069851736604 536 0 2 536 804
+140	7727718 5263 31143 93661 16 24.05925 216 0 3 537 1395
+141	7732981 17 31143 31143 16 16 1 180 180 180 32400
+142	7732998 54804 31143 93922 16 24.069853063753 1991 0 3 3660 8988
+143	7787802 109608 31143 93922 16 24.069853063753 3982 0 0 0 0
+144	7897410 117232 31143 93922 16 24.069853063753 4298 0 2 316 632
+145	8014642 112552 31143 93922 16 24.069853063753 4094 0 2 112 224
+146	8127194 109608 31143 93922 16 24.069853063753 3982 0 0 0 0
+147	8236802 109608 31143 93922 16 24.069853063753 3982 0 0 0 0
+148	8346410 26524 31203 93852 16.029779614877 24.069430418249 887 123 323 127961 21699643
+149	8372934 26524 31203 93852 16.029779614877 24.069430418249 887 123 323 127961 21699643
+150	8399458 6736 31239 93855 16.030163184211 24.069430418249 227 16 655 66325 27859085
+151	8406194 7245 31239 93855 16.030163184211 24.069430418249 227 22456 31456 6175512 169210865472
+152	8413439 840 32251 93201 16.199034500611 23.999034500611 28 513 513 14364 7368732
+153	8414279 896 32251 93201 16.199034500611 23.999034500611 28 23456 30456 750768 20284878208
+154	8415175 896 32251 93201 16.199034500611 23.999034500611 28 23456 30456 750768 20284878208
+155	8416071 896 32251 93201 16.199034500611 23.999034500611 28 23456 30456 750768 20284878208
+156	8416967 896 32251 93201 16.199034500611 23.999034500611 28 23456 30456 750768 20284878208
+157	8417863 2856 32254 93644 16.199034500611 24.059034 107 123 323 15640 2708716
+158	8420719 2856 32257 93647 16.199034500611 24.059034 107 123 323 15640 2708716
+159	8423575 10466 32258 93661 16.199034500611 24.05925 428 0 2 428 642
+160	8434041 4090 42817 93805 18 24.069429 168 0 3 417 1083
+161	8438131 17 42817 42817 18 18 1 180 180 180 32400
+162	8438148 43147 42817 93902 18 24.069852473208 1567 0 3 2884 7084
+163	8481295 86294 42817 93902 18 24.069852473208 3134 0 0 0 0
+164	8567589 92390 42817 93902 18 24.069852473208 3374 0 2 240 480
+165	8659979 88318 42817 93902 18 24.069852473208 3226 0 2 92 184
+166	8748297 86294 42817 93902 18 24.069852473208 3134 0 0 0 0
+167	8834591 86294 42817 93902 18 24.069852473208 3134 0 0 0 0
+168	8920885 20936 42874 93903 18.010137280564 24.069852473208 700 123 323 101220 17230340
+169	8941821 20936 42874 93903 18.010137280564 24.069852473208 700 123 323 101220 17230340
+170	8962757 5345 42877 93906 18.010137280564 24.069852473208 180 16 655 53077 22144049
+171	8968102 5747 42877 93906 18.010137280564 24.069852473208 180 24456 31456 5046080 142024596480
+172	8973849 690 43561 93279 18.108949454408 24.008949454408 23 584 584 13432 7844288
+173	8974539 736 43561 93279 18.108949454408 24.008949454408 23 25456 31456 645488 18196902528
+174	8975275 736 43561 93279 18.108949454408 24.008949454408 23 25456 31456 645488 18196902528
+175	8976011 736 43561 93279 18.108949454408 24.008949454408 23 25456 31456 645488 18196902528
+176	8976747 736 43561 93279 18.108949454408 24.008949454408 23 25456 31456 645488 18196902528
+177	8977483 2196 43564 93787 18.108949454408 24.068949 83 123 323 12069 2073327
+178	8979679 2196 43567 93790 18.108949454408 24.068949 83 123 323 12069 2073327
+179	8981875 8120 43568 93805 18.108949454408 24.069429 332 0 2 332 498
+180	8989995 2694 57653 93733 20 24.062126279645 110 0 3 272 706
+181	8992689 17 57653 57653 20 20 1 180 180 180 32400
+182	8992706 29825 57653 93882 20 24.069851877716 1081 0 3 1999 4915
+183	9022531 59650 57653 93882 20 24.069851877716 2162 0 0 0 0
+184	9082181 63394 57653 93882 20 24.069851877716 2318 0 2 156 312
+185	9145575 61234 57653 93882 20 24.069851877716 2222 0 2 60 120
+186	9206809 59650 57653 93882 20 24.069851877716 2162 0 0 0 0
+187	9266459 59650 57653 93882 20 24.069851877716 2162 0 0 0 0
+188	9326109 14545 57729 93883 20.0104095027 24.069851877716 486 123 323 70140 11902108
+189	9340654 14545 57729 93883 20.0104095027 24.069851877716 486 123 323 70140 11902108
+190	9355199 3683 57732 93886 20.0104095027 24.069851877716 124 16 584 37129 15427455
+191	9358882 3960 57732 93886 20.0104095027 24.069851877716 124 27456 31456 3600544 104721912064
+192	9362842 450 59004 93713 20.161918279645 24.061918279645 15 655 655 9825 6435375
+193	9363292 480 59004 93713 20.161918279645 24.061918279645 15 27456 31456 433840 12569543040
+194	9363772 480 59004 93713 20.161918279645 24.061918279645 15 27456 31456 433840 12569543040
+195	9364252 480 59004 93713 20.161918279645 24.061918279645 15 27456 31456 433840 12569543040
+196	9364732 480 59004 93713 20.161918279645 24.061918279645 15 27456 31456 433840 12569543040
+197	9365212 1440 59007 93716 20.161918279645 24.061918279645 54 123 323 7881 1361799
+198	9366652 1440 59010 93719 20.161918279645 24.061918279645 54 123 323 7881 1361799
+199	9368092 5328 59011 93733 20.161918279645 24.062126279645 216 0 2 216 324
+200	9373420 30 93266 93266 24 24 2 0 2 2 4
+201	9373450 17 93266 93266 24 24 1 180 180 180 32400
+202	9373467 517 93266 93897 24 24.06985234107 19 1 3 37 91
+203	9373984 1034 93266 93897 24 24.06985234107 38 0 0 0 0
+204	9375018 1034 93266 93897 24 24.06985234107 38 0 0 0 0
+205	9376052 1034 93266 93897 24 24.06985234107 38 0 0 0 0
+206	9377086 1034 93266 93897 24 24.06985234107 38 0 0 0 0
+207	9378120 1034 93266 93897 24 24.06985234107 38 0 0 0 0
+208	9379154 269 93341 93898 24.009166590747 24.06985234107 9 123 323 1909 493455
+209	9379423 269 93341 93898 24.009166590747 24.06985234107 9 123 323 1909 493455
+210	9379692 207 93421 93901 24.010137919314 24.06985234107 7 16 655 2171 1050675
+211	9379899 223 93421 93901 24.010137919314 24.06985234107 7 30456 31456 218192 6802535552
+

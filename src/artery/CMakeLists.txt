@@ -6,6 +6,7 @@ add_library(core SHARED
     application/DenmObject.cc
     application/DenService.cc
     application/ExampleService.cc
+    application/CaLoggingService.cc
     application/GbcMockMessage.cc
     application/GbcMockService.cc
     application/InfrastructureMockMessage.cc
@@ -23,6 +24,7 @@ add_library(core SHARED
     application/PeriodicLoadService.cc
     application/PersonMiddleware.cc
     application/RsuCaService.cc
+    application/RsuCaLoggingService.cc
     application/RtcmMockMessage.cc
     application/RtcmMockReceiver.cc
     application/RtcmMockService.cc

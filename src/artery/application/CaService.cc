@@ -214,6 +214,9 @@ vanetza::asn1::Cam createCooperativeAwarenessMessage(const VehicleDataProvider& 
 	header.messageID = ItsPduHeader__messageID_cam;
 	header.stationID = vdp.station_id();
 
+        //std::string roadID = vdp.roadID();
+        //EV_ERROR << roadID << '\n';
+
 	CoopAwareness_t& cam = (*message).cam;
 	cam.generationDeltaTime = genDeltaTime * GenerationDeltaTime_oneMilliSec;
 	BasicContainer_t& basic = cam.camParameters.basicContainer;
@@ -232,6 +235,31 @@ vanetza::asn1::Cam createCooperativeAwarenessMessage(const VehicleDataProvider& 
 
 	hfc.present = HighFrequencyContainer_PR_basicVehicleContainerHighFrequency;
 	BasicVehicleContainerHighFrequency& bvc = hfc.choice.basicVehicleContainerHighFrequency;
+
+        //std::string cleanString1 = roadID.substr(0, roadID.find("_"));
+        //std::string cleanString2 = cleanString1.substr(0, cleanString1.find("#"));
+
+
+
+//        LanePosition_t* lp = vanetza::asn1::allocate<LanePosition_t>();
+//
+//
+//
+//
+//        long roadID_l;
+//        try {
+//            long roadID_l = std::stol(roadID);
+//        } catch (const std::invalid_argument &ia) {
+//            roadID_l = 0;
+//        }
+//
+//        lp = &roadID_l;
+//
+//        EV_ERROR << *lp << '\n';
+
+        //bvc.lanePosition = lp;
+
+
 	bvc.heading.headingValue = round(vdp.heading(), decidegree);
 	bvc.heading.headingConfidence = HeadingConfidence_equalOrWithinOneDegree;
 	bvc.speed.speedValue = buildSpeedValue(vdp.speed());

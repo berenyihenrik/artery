@@ -11,7 +11,7 @@ simple RsuCaService like ItsG5Service
         @signal[CamReceived](type=CaObject);
         @signal[CamSent](type=CaObject);
 
-        @statistic[reception](source=CamReceived;record=vector(camStationId)?,vector(camGenerationDeltaTime)?);
+        @statistic[reception](source=CamReceived;record=vector(camStationId)?,vector(camSpeed)?,vector(camLatitude)?,vector(camLongitude)?);
         @statistic[transmission](source=CamSent;record=vector(camStationId)?,vector(camGenerationDeltaTime)?);
 
         // CAM generation interval
